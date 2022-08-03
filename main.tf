@@ -28,4 +28,6 @@ resource "aws_iam_user" "lb" {
 resource "aws_iam_group" "developers" {
   name = "developers"
   path = "/"
+  assume_role_policy = "${file("policy.json")}"
+
 }
