@@ -9,7 +9,7 @@ terraform {
 
 provider "aws" {
     region = "eu-central-1"
-    shared_credentials_file = "//wsl$/Ubuntu/home/ahmedkam/teraformcicd/.aws/creds"
+    shared_credentials_files = "//wsl$/Ubuntu/home/ahmedkam/teraformcicd/.aws/creds"
 
 }
 
