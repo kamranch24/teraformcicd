@@ -16,11 +16,15 @@ provider "aws" {
 }
 
 
-resource "aws_s3_bucket" "cicd" {
-  bucket = "my-first-cicd-bucket"
+resource "aws_iam_user" "lb" {
+  name = "loadbalancer"
+  path = "/system/"
 
   tags = {
-    Name        = "CI/CD Bucket"
-    Environment = "Dev"
+    tag-key = "tag-value"
   }
+}
+
+resource "aws_iam_access_key" "lb" {
+  user = aws_iam_user.lb.name
 }
